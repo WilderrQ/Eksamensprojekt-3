@@ -1,0 +1,126 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$link-decoration: none;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$custom-colors: (
+	"farve": $cyan-400,
+	"custom-gray": #7a7879 !important,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+@import "bootstrapComponents";
+
+// 5. Du kan lave styling her...
+
+/* fonts */
+
+@font-face {
+	font-family: 'UniversalSans';
+	src: url('../Fonts/Universal-Sans-Display-562-Trial.ttf') format('truetype');
+}
+
+.Overskrift {
+	font-family: 'UniversalSans';
+}
+
+.Brødtekst {
+	font-family: 'Merriweather';
+}
+
+/* padding */
+
+.padding4 {
+	padding-left: 25rem;
+	padding-right: 28rem;
+}
+
+
+.padding6 {
+	padding-left: 4rem;
+}
+
+
+/* Darkmode farver */
+
+/* Dark mode - body starter sort */
+
+/* Dark mode baggrund */
+.dark-mode { background-color: #0d0d13; }
+
+/* Tekstfarver */
+.color-toggle[data-color-type="1"] { color: #83b741; }
+.color-toggle[data-color-type="2"] { color: #e8e3e0; }
+.color-toggle[data-color-type="3"] { color: #0d0d13; }
+
+/* Tekstfarver når knappen er aktiv */
+.color-toggle.color-active[data-color-type="1"] { color: #135c5d; }
+.color-toggle.color-active[data-color-type="2"] { color: #0d0d13; }
+.color-toggle.color-active[data-color-type="3"] { color: #e8e3e0; }
+
+/* Baggrund farve på body når aktiv */
+.color-bg { background-color: #e8e3e0; transition: background-color 0.3s ease; }
+
+
+/* Boks normale og aktive farver */
+.box-toggle[data-box-type="1"] { background-color: #e8e3e0; padding: 10px; margin-top: 10px; transition: background-color 0.3s ease, color 0.3s ease; }
+.box-toggle.box-active[data-box-type="1"] { background-color: #0d0d13; } /* kun én aktiv farve for boksen */
+.box-toggle[data-box-type="2"] { border-top: 3px solid #83b741; transition: border-color 0.3s ease; }
+.box-toggle.box-active[data-box-type="2"] { border-color: #135c5d; }
+.box-toggle[data-box-type="3"] { background-color: #135c5d !important; }
+.box-toggle.box-active[data-box-type="3"] { background-color: #83b741 !important; }
+.box-toggle[data-box-type="4"] {border: 3px solid #83b741; transition: border-color 0.3s ease; }
+.box-toggle.box-active[data-box-type="4"] { border-color: #135c5d;
+}
+
+
+.line {
+	all: unset;                /* vigtige linje! Fjerner ALT browser styling */
+	display: block;
+	width: 100%;
+	border-top: 4px solid #83b741;
+	margin: 10px 0;
+}
+
+.image-row {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center;
+	gap: 30px;
+}
+
+.image-wrapper {
+	position: relative;
+	width: 150px;        /* vigtigt: GIVER BREDDEN */
+	height: 80px;        /* vigtigt: GIVER HØJDEN */
+}
+
+.img-toggle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: opacity 0.3s ease;
+}
+
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.image-wrapper::before {
+	content: "";
+	display: block;
+}
+
+
