@@ -11,7 +11,6 @@ $link-decoration: none;
 // 4. Include any default map overrides here
 $custom-colors: (
 	"farve": $cyan-400,
-	"custom-gray": #7a7879 !important,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -65,12 +64,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 	margin: 10px 0;
 }
 
-.image-row {
-	display: flex !important;
-	flex-direction: row !important;
-	align-items: center;
-	gap: 30px;
-}
 
 .image-wrapper {
 	position: relative;
