@@ -95,9 +95,33 @@
         .size6 {
             width: 35px;
             height: 35px;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
             @media (max-width: 1200px) {
                 width: 30px;
                 height: 30px;
+            }
+        }
+
+        .size7 {
+            width: auto;
+            height: 400px;
+            position: relative;
+            margin-left: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1200px) {
+            .size7 {
+                width: auto;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .size7 {
+                width: auto;
+                height: 200px;
             }
         }
 
@@ -108,6 +132,7 @@
             flex-direction: column;
             justify-content: space-between;
             cursor: pointer;
+            position: relative; /* nødvendigt for animation */
         }
 
         .burger span {
@@ -116,12 +141,26 @@
             height: 3px;
             border-radius: 3px;
             transition: 0.3s ease;
+            background-color: currentColor; /* så de arver farven */
         }
 
+        /* Sikrer dine tidligere regler stadig gælder */
         .burger span.box-toggle[data-box-type="1"] {
             padding: 0 !important;
             margin: 0 !important;
             height: 3px !important;
+        }
+
+        /* ----- ANIMATION TIL X ----- */
+
+        /* Første streg */
+        .burger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        /* Anden streg */
+        .burger.active span:nth-child(2) {
+            transform: translateY(-9px) rotate(-45deg);
         }
 
         .padding3 {
@@ -156,6 +195,13 @@
         .padding10 {
             padding-top: 16rem;
             padding-bottom: 16rem;
+        }
+
+        @media (max-width: 1200px) {
+            .padding10 {
+                padding-top: 16rem;
+                padding-bottom: 8rem;
+            }
         }
 
         .padding11 {
@@ -202,6 +248,34 @@
             border-color: #135c5d !important;
         }
 
+        .dark-mode { background-color: #0d0d13; }
+
+        /* Tekstfarver */
+        .color-toggle[data-color-type="1"] { color: #83b741; }
+        .color-toggle[data-color-type="2"] { color: #e8e3e0; }
+        .color-toggle[data-color-type="3"] { color: #0d0d13; }
+
+        /* Tekstfarver når knappen er aktiv */
+        .color-toggle.color-active[data-color-type="1"] { color: #135c5d; }
+        .color-toggle.color-active[data-color-type="2"] { color: #0d0d13; }
+        .color-toggle.color-active[data-color-type="3"] { color: #e8e3e0; }
+
+        /* Baggrund farve på body når aktiv */
+        .color-bg { background-color: #e8e3e0; transition: background-color 0.3s ease; }
+
+
+        /* Boks normale og aktive farver */
+        .box-toggle[data-box-type="1"] { background-color: #e8e3e0; padding: 10px; margin-top: 10px; transition: background-color 0.3s ease, color 0.3s ease; }
+        .box-toggle.box-active[data-box-type="1"] { background-color: #0d0d13; } /* kun én aktiv farve for boksen */
+        .box-toggle[data-box-type="2"] { border-top: 3px solid #83b741; transition: border-color 0.3s ease; }
+        .box-toggle.box-active[data-box-type="2"] { border-color: #135c5d; }
+        .box-toggle[data-box-type="3"] { background-color: #135c5d !important; }
+        .box-toggle.box-active[data-box-type="3"] { background-color: #83b741 !important; }
+        .box-toggle[data-box-type="4"] {border: 3px solid #83b741; transition: border-color 0.3s ease; }
+        .box-toggle.box-active[data-box-type="4"] { border-color: #135c5d;}
+        .box-toggle[data-box-type="5"] { background-color: #0d0d13; padding: 10px; margin-top: 10px; }
+        .box-toggle.box-active[data-box-type="5"] { background-color: #e8e3e0; transition: background-color 0.3s ease, color 0.3s ease; }
+
 
 
         .color-toggle[data-color-type="2"]::placeholder {
@@ -232,10 +306,44 @@
 
         .margin1 {
             margin-right: 4rem;
-            @media (max-width: 1000px) {
-                padding-left: 8rem;
+        }
+
+        @media (max-width: 1200px) {
+            .margin1 {
+                margin-right: 22rem;
             }
         }
+
+        @media (max-width: 693px) {
+            .margin1 {
+                margin-right: 16rem;
+            }
+        }
+
+        @media (max-width: 597px) {
+            .margin1 {
+                margin-right: 9rem;
+            }
+        }
+
+        @media (max-width: 485px) {
+            .margin1 {
+                margin-right: 4rem;
+            }
+        }
+
+        @media (max-width: 485px) {
+            .margin1 {
+                margin-right: 2rem;
+            }
+        }
+
+        @media (max-width: 373px) {
+            .margin1 {
+                margin-right: 0rem;
+            }
+        }
+
 
         .padding {
             padding-left: 13.5rem;
@@ -293,6 +401,24 @@
             }
         }
 
+        .tekst-lille2 {
+            font-size: 1.2rem;
+            @media (max-width: 1140px) {
+                font-size: 0.84rem;
+            }
+        }
+
+        .tekst-mellemstor2 {
+            font-size: 1.76rem;
+            @media (max-width: 1450px) {
+                font-size: 1.232rem;
+            }
+            @media (max-width: 1140px) {
+                font-size: 0.8624rem;
+            }
+
+        }
+
         .padding13 {
             padding-left: 20rem;
             padding-right: 20rem;
@@ -321,11 +447,34 @@
             }
         }
 
+        .padding22 {
+            padding-top: 5rem;
+            @media (max-width: 767px) {
+                padding-top: 1rem;
+            }
+        }
+
+        .padding23 {
+            padding-top: 7rem;
+
+        }
+
         .padding16 {
             padding-left: 4rem;
             @media (max-width: 1000px) {
                 padding-top: 2rem;
             }
+        }
+
+        .padding20 {
+            padding-left: 4rem;
+            @media (max-width: 1000px) {
+                padding-top: 2rem;
+            }
+        }
+
+        .padding17 {
+            padding-top: 13rem;
         }
 
         .carousel {
@@ -341,11 +490,31 @@
         }
 
         .carousel-track img {
-            width: calc((100% - 9 * 10px) / 10); /* 10 billeder + 9 gaps */
             height: 150px;
             object-fit: contain;
             flex-shrink: 0;
             background: transparent;
+        }
+
+        /* --- DESKTOP --- 10 billeder */
+        @media (min-width: 992px) {
+            .carousel-track img {
+                width: calc((100% - 9 * 10px) / 10);
+            }
+        }
+
+        /* --- TABLET --- 6 billeder */
+        @media (max-width: 991px) and (min-width: 600px) {
+            .carousel-track img {
+                width: calc((100% - 5 * 10px) / 6);
+            }
+        }
+
+        /* --- MOBIL --- 3 billeder */
+        @media (max-width: 599px) {
+            .carousel-track img {
+                width: calc((100% - 2 * 10px) / 3);
+            }
         }
 
         @keyframes scroll {
@@ -369,8 +538,18 @@
             }
         }
 
+        @media (max-width: 1200px) {
+            .hide-on-x2 {
+                width: 100%;
+                display: none; /* eller flex */
+                text-align: left;
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+
         .tekst-mellemstor {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             @media (max-width: 1450px) {
                 font-size: 1.54rem;
             }
@@ -526,13 +705,107 @@
                 padding-top: 0 !important;
             }
         }
+
+        .burger-panel {
+            display: none;               /* helt skjult fra start */
+            position: fixed;
+            top: 157px;                   /* justér til din navbar-højde */
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 9990;
+            padding: 20px;
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            height: 900px;
+        }
+
+        @media (max-width: 1140px) {
+            .burger-panel {
+                top: 90px;
+            }
+        }
+
+        .burger-panel.open {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .fixed-logo {
+            position: fixed;
+            bottom: 170px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .size7 .image-wrapper {
+            position: relative;
+            width: 100%;    /* fylder hele bredden */
+            height: 100%;   /* fylder hele højden */
+        }
+
+        .size7 .image-wrapper img {
+            position: absolute;
+            top: 0; left: 0;
+            width: auto;    /* bredden justeres automatisk */
+            height: 100%;   /* fylder hele højden på containeren */
+            object-fit: contain;  /* bevarer proportion uden beskæring */
+        }
+
+        .padding24 {
+            padding-right: 7rem;
+        }
+
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .padding25 {
+                padding-top: 6rem;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .padding26 {
+                padding-left: 12rem;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .padding27 {
+                padding-left: 7rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .padding27 {
+                padding-left: 15rem;
+                padding-top: 3rem;
+            }
+        }
+
+        @media (max-width: 555px) {
+            .padding27 {
+                padding-left: 12rem;
+                padding-top: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .padding27 {
+                padding-left: 9rem;
+                padding-top: 3rem;
+            }
+        }
+
+
     </style>
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg fixed-top box-toggle mt-0" data-box-type="5">
     <div class="container-fluid">
         <div class="image-row">
             <div class="image-wrapper size">
@@ -568,8 +841,84 @@
     </div>
 </nav>
 
+<div id="burgerPanel" class="burger-panel box-toggle" data-box-type="5">
+    <section class="row padding13 padding23">
+        <article class="col-12 col-md-4 justify-content-center d-flex">
+            <div>
+                <h3 class="Brødtekst tekst-mellemstor2 color-toggle" data-color-type="2"> Om os </h3>
+                <p class="Brødtekst color-toggle padding22 tekst-lille2 click" data-color-type="2" tabindex="0">Vores
+                    historie</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Hvad vi kan hjælpe dig
+                    med</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Vores lokation</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Vores åbningstider</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Vores kontaktinfo</p>
+            </div>
+        </article>
+        <article class="col-12 col-md-4 pt-5 pt-md-0 justify-content-center d-flex">
+            <div>
+                <h3 class="Brødtekst tekst-mellemstor2 color-toggle " data-color-type="2"> Vi tilbyder </h3>
+                <p class="Brødtekst tekst-lille2 color-toggle padding22 click" data-color-type="2" tabindex="0">Kurser og
+                    workshops</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Konsultationer</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Tilpasning af
+                    hjemmeside</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Samlede pakker</p>
+            </div>
+        </article>
+        <article class="col-12 col-md-4 pt-5 pt-md-0 justify-content-center d-flex">
+            <div>
+                <h3 class="Brødtekst tekst-mellemstor2 color-toggle click" data-color-type="2"> Hvad er EAA? </h3>
+                <p class="Brødtekst tekst-lille2 color-toggle padding22 click" data-color-type="2" tabindex="0">Hvad er
+                    nyt?</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">EAA lovgivning</p>
+                <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Guide til
+                    tilgængelighed</p>
+            </div>
+        </article>
+    </section>
 
-<div class="justify-content-end d-flex pe-5 pt-4" role="button">
+    <section class="row">
+        <div class="col-12 col-sm-4 d-flex flex-md-column justify-content-md-end" style="height: 20vh;">
+            <div class="row padding20">
+                <div class="col-md-2 effekt">
+                    <div class="image-wrapper size6 click" tabindex="0">
+                        <img src="img/twitter%201.png" class="img-toggle img-1" alt="Hvidt twitter logo">
+                        <img src="img/twitter%201%20(1).png" class="img-toggle img-2 hidden" alt="Sort twitter logo">
+                        <span class="hover-text">Twitter link</span>
+                    </div>
+                </div>
+                <div class="col-md-2 effekt">
+                    <div class="image-wrapper size6 click" tabindex="0">
+                        <img src="img/instagram%20(5)%201.png" class="img-toggle img-1" alt="Hvidt instagram logo">
+                        <img src="img/instagram%20(5)%201%20(1).png" class="img-toggle img-2 hidden"
+                             alt="Sort instagram logo">
+                        <span class="hover-text">Instagram link</span>
+                    </div>
+                </div>
+                <div class="col-md-2 effekt" style="position: relative;">
+                    <div class="image-wrapper size6 click" tabindex="0">
+                        <img src="img/f_1_.png" class="img-toggle img-1" alt="Hvidt facebook logo">
+                        <img src="img/f_1_%20(1).png" class="img-toggle img-2 hidden" alt="Sort facebook logo">
+                    </div>
+                    <span class="hover-text">Facebook link</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-5 col-md-3 ms-auto hide-on-x fixed-logo">
+            <div class="image-wrapper size5">
+                <img src="img/Logo_-_Organic_Design-12%20(1).png" class="img-toggle img-1"
+                     alt="Hvid version af vores logo + tekst">
+                <img src="img/Logo_-_Organic_Design-13.png" class="img-toggle img-2 hidden"
+                     alt="Sort version af vores logo + tekst">
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<div class="justify-content-end d-flex pe-5 padding17" role="button">
     <div class="effekt" style="position: relative; display: inline-block;">
         <div class="toggle" id="toggleBtn" role="button" tabindex="0">
             <div class="circle"></div>
@@ -740,80 +1089,51 @@
 </section>
 
 
-<section class="row padding13">
-    <article class="col-12 col-md-4 justify-content-center d-flex">
-        <div>
-            <h3 class="Brødtekst tekst-mellemstor color-toggle" data-color-type="2"> Om os </h3>
-            <p class="Brødtekst color-toggle padding14 tekst-lille click" data-color-type="2" tabindex="0">Vores
-                historie</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Hvad vi kan hjælpe dig
-                med</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Vores lokation</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Vores åbningstider</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Vores kontaktinfo</p>
-        </div>
-    </article>
-    <article class="col-12 col-md-4 pt-5 pt-md-0 justify-content-center d-flex">
-        <div>
-            <h3 class="Brødtekst tekst-mellemstor color-toggle " data-color-type="2"> Vi tilbyder </h3>
-            <p class="Brødtekst tekst-lille color-toggle padding14 click" data-color-type="2" tabindex="0">Kurser og
-                workshops</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Konsultationer</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Tilpasning af
-                hjemmeside</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Samlede pakker</p>
-        </div>
-    </article>
-    <article class="col-12 col-md-4 pt-5 pt-md-0 justify-content-center d-flex">
-        <div>
-            <h3 class="Brødtekst tekst-mellemstor color-toggle click" data-color-type="2"> Hvad er EAA? </h3>
-            <p class="Brødtekst tekst-lille color-toggle padding14 click" data-color-type="2" tabindex="0">Hvad er
-                nyt?</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">EAA lovgivning</p>
-            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Guide til
-                tilgængelighed</p>
-        </div>
-    </article>
-</section>
-
-<section class="row">
-    <div class="col-12 col-sm-4 d-flex flex-md-column justify-content-md-end" style="height: 38vh;">
-        <div class="row padding16">
-            <div class="col-md-2 effekt">
-                <div class="image-wrapper size6 click" tabindex="0">
-                    <img src="img/twitter%201.png" class="img-toggle img-1" alt="Hvidt twitter logo">
-                    <img src="img/twitter%201%20(1).png" class="img-toggle img-2 hidden" alt="Sort twitter logo">
-                    <span class="hover-text">Twitter link</span>
-                </div>
-            </div>
-            <div class="col-md-2 effekt">
-                <div class="image-wrapper size6 click" tabindex="0">
-                    <img src="img/instagram%20(5)%201.png" class="img-toggle img-1" alt="Hvidt instagram logo">
-                    <img src="img/instagram%20(5)%201%20(1).png" class="img-toggle img-2 hidden"
-                         alt="Sort instagram logo">
-                    <span class="hover-text">Instagram link</span>
-                </div>
-            </div>
-            <div class="col-md-2 effekt" style="position: relative;">
-                <div class="image-wrapper size6 click" tabindex="0">
-                    <img src="img/f_1_.png" class="img-toggle img-1" alt="Hvidt facebook logo">
-                    <img src="img/f_1_%20(1).png" class="img-toggle img-2 hidden" alt="Sort facebook logo">
-                </div>
-                <span class="hover-text">Facebook link</span>
-            </div>
+<div class="row pb-5">
+    <div class="col-0 col-xl-2 hide-on-x2 size7">
+        <div class="image-wrapper">
+            <img src="img/Logo%20-%20Organic%20Design_Footer%20logoHvid-06.png" class="img-toggle img-1" alt="Hvid version af vores logo + tekst">
+            <img src="img/Logo_-_Organic_Design_Footer_logoHvid-11.png" class="img-toggle img-2 hidden" alt="Sort version af vores logo + tekst">
         </div>
     </div>
 
-    <div class="col-12 col-sm-5 col-md-3 ms-auto hide-on-x">
-        <div class="image-wrapper size5">
-            <img src="img/Logo_-_Organic_Design-12%20(1).png" class="img-toggle img-1"
-                 alt="Hvid version af vores logo + tekst">
-            <img src="img/Logo_-_Organic_Design-13.png" class="img-toggle img-2 hidden"
-                 alt="Sort version af vores logo + tekst">
-        </div>
-    </div>
-</section>
+    <section class="col-12 col-xl-7 pt-5 ms-auto padding24">
+        <div class="row">
+        <article class="col-12 col-md-6 col-xxl-3 padding26 padding27">
+            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">EAA Lovgivning</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Hvad er EAA?</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Lovkrav for SMV'er</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Tilgængelighedstjek</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Ressourcer og guides</p>
+        </article>
 
+        <article class="col-12 col-md-6 col-xxl-3 padding27">
+            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Om os</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Vores mission</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Teamet bag Organic Design</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Kundecases</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Presse og omtale</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Kontakt os</p>
+        </article>
+
+        <article class="col-12 col-md-6 col-xxl-3 padding25 padding26 padding27">
+            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">Pakker</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Konsulentpakker</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Workshop-tilbud</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Online kurser</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Priser og booking</p>
+        </article>
+
+        <article class="col-12 col-md-6 col-xxl-3 padding25 padding27">
+            <p class="Brødtekst tekst-lille color-toggle click" data-color-type="2" tabindex="0">FAQ</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Hvordan foregår en konsultation?</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Hvilke platforme arbejder I med?</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Hvad er bæredygtigt webdesign?</p>
+            <p class="Brødtekst tekst-lille2 color-toggle click" data-color-type="2" tabindex="0">Hvordan tilmelder jeg mig et kursus?</p>
+        </article>
+        </div>
+    </section>
+</div>
 
 <!-- light/dark-mode knap funktion -->
 <script>
@@ -909,6 +1229,21 @@
         });
     });
 </script>
+
+<!-- burger menu -->
+
+<script>
+    document.getElementById("burgerBtn").addEventListener("click", function () {
+        document.getElementById("burgerPanel").classList.toggle("open");
+    });
+</script>
+
+<script>
+    document.getElementById("burgerBtn").addEventListener("click", function () {
+    this.classList.toggle("active");
+    });
+</script>
+
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

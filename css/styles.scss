@@ -54,32 +54,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 /* Dark mode - body starter sort */
 
 /* Dark mode baggrund */
-.dark-mode { background-color: #0d0d13; }
 
-/* Tekstfarver */
-.color-toggle[data-color-type="1"] { color: #83b741; }
-.color-toggle[data-color-type="2"] { color: #e8e3e0; }
-.color-toggle[data-color-type="3"] { color: #0d0d13; }
-
-/* Tekstfarver når knappen er aktiv */
-.color-toggle.color-active[data-color-type="1"] { color: #135c5d; }
-.color-toggle.color-active[data-color-type="2"] { color: #0d0d13; }
-.color-toggle.color-active[data-color-type="3"] { color: #e8e3e0; }
-
-/* Baggrund farve på body når aktiv */
-.color-bg { background-color: #e8e3e0; transition: background-color 0.3s ease; }
-
-
-/* Boks normale og aktive farver */
-.box-toggle[data-box-type="1"] { background-color: #e8e3e0; padding: 10px; margin-top: 10px; transition: background-color 0.3s ease, color 0.3s ease; }
-.box-toggle.box-active[data-box-type="1"] { background-color: #0d0d13; } /* kun én aktiv farve for boksen */
-.box-toggle[data-box-type="2"] { border-top: 3px solid #83b741; transition: border-color 0.3s ease; }
-.box-toggle.box-active[data-box-type="2"] { border-color: #135c5d; }
-.box-toggle[data-box-type="3"] { background-color: #135c5d !important; }
-.box-toggle.box-active[data-box-type="3"] { background-color: #83b741 !important; }
-.box-toggle[data-box-type="4"] {border: 3px solid #83b741; transition: border-color 0.3s ease; }
-.box-toggle.box-active[data-box-type="4"] { border-color: #135c5d;
-}
 
 
 .line {
