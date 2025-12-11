@@ -458,6 +458,13 @@
 
         }
 
+        @media (max-height: 750px) {
+            .padding23 {
+                padding-top: 3rem;
+
+            }
+        }
+
         .padding16 {
             padding-left: 4rem;
             @media (max-width: 1000px) {
@@ -709,6 +716,38 @@
             }
         }
 
+        @media (min-width: 1600px) {
+            .height {
+                height: 550px;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .height2 {
+                padding-bottom: 2.4rem;
+            }
+        }
+
+        @media (min-width: 1700px) {
+            .height2 {
+                padding-bottom: 0rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .height3 {
+                padding-top: 0.8rem;
+            }
+        }
+
+        @media (min-width: 1700px) {
+            .height3 {
+                padding-top: 3rem;
+            }
+        }
+
+
+
 
         main.row > article {
             flex: 0 0 100%;
@@ -718,7 +757,7 @@
         }
 
 
-        @media (min-width: 1700px) {
+        @media (min-width: 1600px) {
             main.row > article {
                 flex: 0 0 33.3333%;
                 max-width: 33.3333%;
@@ -765,6 +804,15 @@
             bottom: 170px;
             right: 20px;
             z-index: 9999;
+        }
+
+        @media (max-height: 750px) {
+            .fixed-logo {
+                position: fixed;
+                bottom: 280px;
+                right: 20px;
+                z-index: 9999;
+            }
         }
 
         .size7 .image-wrapper {
@@ -1038,7 +1086,7 @@
 
 
 <main class="row padding3 pt-xxl-5 pb-md-5" tabindex="1">
-    <article class="col-12 pe-xxl-5">
+    <article class="col-12 col-lg-4 pe-xxl-5">
         <div class="box-toggle height rounded-1" data-box-type="1">
             <h2 class="Brødtekst tekst-mellemstor color-toggle pt-5 justify-content-center d-flex pb-4" data-color-type="3">
                 Workshops & kurser</h2>
@@ -1055,12 +1103,12 @@
             </div>
         </div>
     </article>
-    <article class="col-12 ps-xxl-4 pe-xxl-4 pt-5 pt-xxl">
+    <article class="col-12 col-lg-4 ps-xxl-4 pt-5 pt-xxl-0 pe-xxl-4  pt-xxl">
         <div class="box-toggle height rounded-1" data-box-type="1">
             <h2 class="Brødtekst tekst-mellemstor color-toggle pt-5 justify-content-center d-flex pb-4" data-color-type="3">
                 Konsultationer</h2>
             <br>
-            <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille" data-color-type="3">
+            <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille height2" data-color-type="3">
                 Få professionel rådgivning, der hjælper din virksomhed med at leve op til tilgængelighedslovgivningen og
                 samtidig med at I udvikler bæredygtige og brugervenlige løsninger.</p>
             <div class="justify-content-end d-flex pb-3 pt-2 pe-4">
@@ -1070,7 +1118,7 @@
             </div>
         </div>
     </article>
-    <article class="col-12 ps-xxl-5 pt-5 pt-xxl">
+    <article class="col-12 col-lg-4 ps-xxl-5 pt-5 pt-xxl-0 pt-xxl">
         <div class="box-toggle height rounded-1" data-box-type="1">
             <h2 class="Brødtekst tekst-mellemstor color-toggle pt-5 justify-content-center d-flex pb-4" data-color-type="3">
                 Mere om os</h2>
@@ -1078,7 +1126,7 @@
             <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille pb-4" data-color-type="3">
                 Få indsigt i vores værdier og mission, og hvordan vi støtter SMV’er i at skabe tilgængelige og
                 bæredygtige designprojekter, der gør en forskel.</p>
-            <div class="justify-content-end d-flex pb-3 pt-5 pe-4">
+            <div class="justify-content-end d-flex pb-3 pe-4 height3">
                 <a href="Om-os.html" class="click-wrapper pt-2">
                 <button type="button" class="btn Brødtekst tekst-mellem box-toggle color-toggle kontakt-knap"
                         data-box-type="3" data-color-type="2" tabindex="0">mere..
@@ -1181,7 +1229,7 @@
     <section class="col-12 col-xl-6 pt-5 ms-auto padding24">
         <div class="row">
         <article class="col-12 col-md-6 col-xxl-3 padding26 padding27 padding33">
-            <p class="Brødtekst tekst-lille color-toggle click pb-5" data-color-type="2" tabindex="0">EAA Lovgivning</p>
+            <p class="Brødtekst tekst-lille color-toggle click pb-5" data-color-type="2" tabindex="0">EAA&nbsp;Lovgivning</p>
             <p class="Brødtekst tekst-lille3 color-toggle click pb-5" data-color-type="2" tabindex="0">Hvad er EAA?</p>
             <p class="Brødtekst tekst-lille3 color-toggle click pb-5" data-color-type="2" tabindex="0">Krav til små virksomheder</p>
             <p class="Brødtekst tekst-lille3 color-toggle click" data-color-type="2" tabindex="0">Hvordan kommer du i gang?</p>
