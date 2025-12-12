@@ -395,6 +395,25 @@
             }
         }
 
+        .tekst-lille4 {
+            font-size: 1.5rem;
+            @media (max-width: 1520px) {
+                font-size: 1.2rem;
+            }
+            @media (max-width: 1300px) {
+                font-size: 1rem;
+            }
+            @media (max-width: 1175px) {
+                font-size: 0.9rem;
+            }
+            @media (max-width: 1175px) {
+                font-size: 0.9rem;
+            }
+            @media (max-width: 1050px) {
+                font-size: 1.05rem;
+            }
+        }
+
         .tekst-lille2 {
             font-size: 1.2rem;
             @media (max-width: 1140px) {
@@ -407,16 +426,27 @@
 
         }
 
+        .padding34 {
+            padding-top: 4rem;
+        }
+
+        @media (min-width: 1050px) {
+            .padding34 {
+                padding-top: 0;
+            }
+        }
+
         .tekst-mellemstor2 {
             font-size: 1.76rem;
             @media (max-width: 1450px) {
                 font-size: 1.232rem;
             }
-            @media (max-width: 1140px) {
+            @media (max-width: 1150px) {
                 font-size: 0.8624rem;
             }
 
         }
+
 
         .padding13 {
             padding-left: 20rem;
@@ -555,6 +585,20 @@
             font-size: 1.8rem;
             @media (max-width: 1450px) {
                 font-size: 1.54rem;
+            }
+            @media (max-width: 1140px) {
+                font-size: 1.078rem;
+            }
+
+        }
+
+        .tekst-mellemstor4 {
+            font-size: 1.8rem;
+            @media (max-width: 1450px) {
+                font-size: 1.54rem;
+            }
+            @media (max-width: 1199px) {
+                font-size: 1.40rem;
             }
             @media (max-width: 1140px) {
                 font-size: 1.078rem;
@@ -710,29 +754,37 @@
             outline-offset: 2px !important;
         }
 
-        @media (min-width: 1700px) {
-            .height {
-                height: 500px;
-            }
-        }
-
-        @media (min-width: 1600px) {
+        @media (max-width: 1650px) {
             .height {
                 height: 550px;
             }
         }
 
-        @media (min-width: 1600px) {
-            .height2 {
-                padding-bottom: 2.4rem;
+        @media (max-width: 1600px) {
+            .height {
+                height: 550px;
             }
         }
 
-        @media (min-width: 1700px) {
-            .height2 {
-                padding-bottom: 0rem;
+        @media (max-width: 1400px) {
+            .height {
+                height: 450px;
             }
         }
+
+        @media (max-width: 1200px) {
+            .height {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1050px) {
+            .height {
+                height: 450px;
+            }
+        }
+
+
 
         @media (min-width: 1600px) {
             .height3 {
@@ -750,20 +802,35 @@
 
 
         main.row > article {
-            flex: 0 0 100%;
-            max-width: 100%;
             padding-left: 0 !important;
             padding-right: 0 !important;
         }
 
 
-        @media (min-width: 1600px) {
+        @media (min-width: 1050px) {
             main.row > article {
-                flex: 0 0 33.3333%;
-                max-width: 33.3333%;
                 padding-left: 15px !important;
                 padding-right: 15px !important;
             }
+        }
+
+        .custom-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        /* Fra 1050px → 3 kolonner */
+        @media (min-width: 1050px) {
+            .custom-col {
+                flex: 0 0 33.3333% !important;
+                max-width: 33.3333% !important;
+            }
+        }
+
+        /* Hvis du vil have spacing, brug dette */
+        .custom-col {
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
         @media (min-width: 1700px) {
@@ -910,6 +977,78 @@
         }
 
 
+
+        /* Gør artikler til flex-containere så deres indhold kan fylde højden */
+        main.row > article {
+            display: flex !important;
+            flex-direction: column;
+            flex: 1 1 0; /* vokser og fylder højden */
+            max-width: none;
+            height: 100%; /* vigtigt */
+        }
+
+        /* Sørg for at den indre box-tile fylder hele højden */
+        main.row > article > .box-toggle.height {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* fyld hele artiklens højde */
+        }
+
+
+        article > .box-toggle {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        article .btn {
+            align-self: end !important;
+        }
+
+        .main-text {
+            flex-grow: 1; /* sørg for teksten fylder det meste plads, men ikke skubber knappen væk */
+        }
+
+        .kontakt-knap-wrapper {
+            margin-top: auto; /* skub knappen til bund */
+        }
+
+        main.row {
+            display: flex;
+            align-items: stretch; /* sørger for kolonner får samme højde */
+        }
+
+        .main-text {
+            flex-grow: 1; /* fylder op mellem top og knap */
+        }
+
+        .height4 {
+            padding-top: 0;
+        }
+
+        @media (min-width: 1050px) and (max-width: 1700px) {
+            .height4 {
+                padding-top: 2.2rem;
+            }
+        }
+
+
+
+        .height5 {
+            padding-top: 0;
+        }
+
+        @media (min-width: 1050px) {
+            .height5 {
+                padding-top: 2.2rem;
+            }
+        }
+
+        @media (min-width: 1700px) {
+            .height5 {
+                padding-top: 4.4rem;
+            }
+        }
 
 
     </style>
@@ -1086,56 +1225,58 @@
 
 
 <main class="row padding3 pt-xxl-5 pb-md-5" tabindex="1">
-    <article class="col-12 col-lg-4 pe-xxl-5">
+    <article class="col pe-xxl-5 custom-col">
         <div class="box-toggle height rounded-1" data-box-type="1">
-            <h2 class="Brødtekst tekst-mellemstor color-toggle pt-5 justify-content-center d-flex pb-4" data-color-type="3">
+            <h2 class="Brødtekst tekst-mellemstor4 color-toggle pt-5 justify-content-center d-flex pb-4" data-color-type="3">
                 Workshops & kurser</h2>
             <br>
-            <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille pb-4" data-color-type="3">
+            <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille4 pb-4" data-color-type="3">
                 Deltag i vores workshops og kurser, hvor vi guider din virksomhed til at overholde
                 tilgængelighedslovgivningen og samtidig udvikle bæredygtige, brugervenlige designløsninger.</p>
             <div clasS="pt-1">
+                <p class=""></p>
             <div class="justify-content-end d-flex pb-3 pt-3 pe-4">
-                <button type="button" class="btn Brødtekst tekst-mellem box-toggle color-toggle kontakt-knap"
+                <button type="button" class="kontakt-knap-wrapper btn Brødtekst tekst-mellem box-toggle color-toggle kontakt-knap"
                         data-box-type="3" data-color-type="2" tabindex="0">mere..
                 </button>
             </div>
             </div>
         </div>
     </article>
-    <article class="col-12 col-lg-4 ps-xxl-4 pt-5 pt-xxl-0 pe-xxl-4  pt-xxl">
+    <article class="col custom-col padding34 pe-xxl-4  pt-xxl">
         <div class="box-toggle height rounded-1" data-box-type="1">
             <h2 class="Brødtekst tekst-mellemstor color-toggle pt-5 justify-content-center d-flex pb-4" data-color-type="3">
                 Konsultationer</h2>
             <br>
-            <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille height2" data-color-type="3">
+            <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille4 height2" data-color-type="3">
                 Få professionel rådgivning, der hjælper din virksomhed med at leve op til tilgængelighedslovgivningen og
                 samtidig med at I udvikler bæredygtige og brugervenlige løsninger.</p>
+            <p class="height4"></p>
             <div class="justify-content-end d-flex pb-3 pt-2 pe-4">
-                <button type="button" class="btn Brødtekst tekst-mellem box-toggle color-toggle kontakt-knap"
+                <button type="button" class="kontakt-knap-wrapper btn Brødtekst tekst-mellem box-toggle color-toggle kontakt-knap"
                         data-box-type="3" data-color-type="2" tabindex="0">mere..
                 </button>
             </div>
         </div>
     </article>
-    <article class="col-12 col-lg-4 ps-xxl-5 pt-5 pt-xxl-0 pt-xxl">
+    <article class="col custom-col ps-xxl-5 padding34 pt-xxl">
         <div class="box-toggle height rounded-1" data-box-type="1">
             <h2 class="Brødtekst tekst-mellemstor color-toggle pt-5 justify-content-center d-flex pb-4" data-color-type="3">
-                Mere om os</h2>
+                Konsultationer</h2>
             <br>
-            <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille pb-4" data-color-type="3">
-                Få indsigt i vores værdier og mission, og hvordan vi støtter SMV’er i at skabe tilgængelige og
+            <p class="Brødtekst color-toggle justify-content-center d-flex ps-5 pe-5 tekst-lille4 height2" data-color-type="3">
+                Få&nbsp;indsigt&nbsp;i&nbsp;vores&nbsp;værdier og mission, og hvordan vi støtter SMV’er i at skabe tilgængelige og
                 bæredygtige designprojekter, der gør en forskel.</p>
-            <div class="justify-content-end d-flex pb-3 pe-4 height3">
-                <a href="Om-os.html" class="click-wrapper pt-2">
-                <button type="button" class="btn Brødtekst tekst-mellem box-toggle color-toggle kontakt-knap"
+            <p class="height5"></p>
+            <div class="justify-content-end d-flex pb-3 pt-2 pe-4">
+                <button type="button" class="kontakt-knap-wrapper btn Brødtekst tekst-mellem box-toggle color-toggle kontakt-knap"
                         data-box-type="3" data-color-type="2" tabindex="0">mere..
                 </button>
-                </a>
             </div>
         </div>
     </article>
 </main>
+
 
 <section class="row padding4 padding10" id="kontakt">
     <article class="col-xl-6 pe-md-5">
